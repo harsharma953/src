@@ -28,14 +28,14 @@ def generate_launch_description():
         executable="joint_state_publisher_gui"
     )
 
-    rviz2_node = Node(
-        package="rviz2",
-        executable="rviz2",
-        arguments=['-d', rviz_config_path]
-    )
+    # rviz2_node = Node(
+    #     package="rviz2",
+    #     executable="rviz2",
+    #     arguments=['-d', rviz_config_path]
+    # )
 
     return LaunchDescription([
         robot_state_publisher_node,
         joint_state_publisher_gui_node,
-        rviz2_node
+        # rviz2_node
     ])
