@@ -108,7 +108,7 @@ class RobotOdometryCalculator:
         odom = Odometry()
         odom.header.stamp = current_time.to_msg()
         odom.header.frame_id = "odom"
-        odom.child_frame_id = "base_link"
+        odom.child_frame_id = "base_footprint"
         
         # Set position
         odom.pose.pose.position.x = x
@@ -179,7 +179,7 @@ def main(args=None):
             t = TransformStamped()
             t.header.stamp = current_time.to_msg()
             t.header.frame_id = "odom"
-            t.child_frame_id = "base_link"
+            t.child_frame_id = "base_footprint"
             t.transform.translation.x = x
             t.transform.translation.y = y
             t.transform.translation.z = 0.0
